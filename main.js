@@ -4,12 +4,9 @@ const BrowserWindow = electron.BrowserWindow;
 const Tray = electron.Tray;
 const Menu = electron.Menu;
 
-
 const app = electron.app;
 const globalShortcut = electron.globalShortcut;
 const path = require("path"); // node.js API 的 path 套件
-
-
 
 function createWindow() {
     const mainWindow = new BrowserWindow({
@@ -18,8 +15,8 @@ function createWindow() {
         webPreferences: {
             preload: path.join(__dirname, 'preload.js'),
         },
-       frame: false,          // 標題列不顯示
-       transparent: true,     // 背景透明
+       frame: false,           // 標題列不顯示
+       transparent: true,      // 背景透明
        autoHideMenuBar: true,  // 工具列不顯示
        show: false,
     });
@@ -85,7 +82,5 @@ app.on("ready", () => {
             win.show();  // Shows and gives focus to the window.
         })
     })
-    
 })
     
-
